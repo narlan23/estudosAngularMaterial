@@ -1,1 +1,6 @@
-<p>header works!</p>
+<button mat-button [matMenuTriggerFor]="mainMenu">Modulos</button>
+<mat-menu #mainMenu>
+  <button mat-menu-item [routerLink]="['pessoas']">Pessoas</button>
+  <button mat-menu-item>Alunos</button>
+  <button mat-menu-item>Prefessores</button>
+</mat-menu>

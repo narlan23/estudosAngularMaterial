@@ -6,16 +6,20 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {MatButtonModule} from '@angular/material/button';
 import { HeaderComponent } from './components/header/header.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { PessoaComponent } from './pages/pessoa/pessoa.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    PessoaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatButtonModule
+    MatButtonModule,
+    MatMenuModule
   ],
   providers: [
     provideAnimationsAsync()
