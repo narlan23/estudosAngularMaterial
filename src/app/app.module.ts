@@ -8,18 +8,26 @@ import {MatButtonModule} from '@angular/material/button';
 import { HeaderComponent } from './components/header/header.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { PessoaComponent } from './pages/pessoa/pessoa.component';
+import { PessoaAddPageComponent } from './pages/pessoa-add-page/pessoa-add-page.component';
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    PessoaComponent
+    PessoaComponent,
+    PessoaAddPageComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [
     provideAnimationsAsync()

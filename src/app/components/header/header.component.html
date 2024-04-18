@@ -1,6 +1,12 @@
 <button mat-button [matMenuTriggerFor]="mainMenu">Modulos</button>
+<button mat-button [matMenuTriggerFor]="cadastros">Cadastro</button>
 <mat-menu #mainMenu>
   <button mat-menu-item [routerLink]="['pessoas']">Pessoas</button>
   <button mat-menu-item>Alunos</button>
-  <button mat-menu-item>Prefessores</button>
+  <button mat-menu-item>Professores</button>
+</mat-menu>
+<mat-menu #cadastros>
+  <button mat-menu-item>Usuarios</button>
+  <button mat-menu-item [routerLink]="['pessoas/cadastro']">Pessoas</button>
+  <button mat-menu-item>Funcionarios</button>
 </mat-menu>
