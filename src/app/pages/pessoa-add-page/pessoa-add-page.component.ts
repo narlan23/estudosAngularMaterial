@@ -7,11 +7,24 @@ import { Component } from '@angular/core';
 })
 export class PessoaAddPageComponent {
 
+  pessoa: any = {
+
+  }
+
   hobles = [
     "Dançar",
     "Jogar",
     "Ler",
     "Escrever"
   ]
+
+  salvar(){
+    if(this.pessoa.nome === null || this.pessoa.nome === ""){
+      alert("formulario invalido!!")
+    }else{
+      console.log("salvando");
+      console.log(this.pessoa);
+    }
+  }
 
 }
