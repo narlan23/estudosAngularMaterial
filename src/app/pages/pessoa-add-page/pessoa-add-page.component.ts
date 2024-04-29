@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-pessoa-add-page',
@@ -18,12 +19,20 @@ export class PessoaAddPageComponent {
     "Escrever"
   ]
 
+  formGroup = this.formBuilder.group({
+    nome : [''],
+    email : [''],
+    hoble : ['']
+  })
+
+  constructor(private formBuilder:FormBuilder){}
+
   salvar(){
-    if(this.pessoa.nome === null || this.pessoa.nome === ""){
-      alert("formulario invalido!!")
+    if(this.formGroup.valid){
+    console.log("salvando");
+    console.log(this.formGroup.value);
     }else{
-      console.log("salvando");
-      console.log(this.pessoa);
+      alert("formulario invalido!!")
     }
   }
 

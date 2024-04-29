@@ -10,7 +10,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { PessoaComponent } from './pages/pessoa/pessoa.component';
 import { PessoaAddPageComponent } from './pages/pessoa-add-page/pessoa-add-page.component';
 import {MatInputModule} from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
@@ -24,6 +24,7 @@ import {MatSelectModule} from '@angular/material/select';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     MatButtonModule,
     MatMenuModule,
     MatInputModule,

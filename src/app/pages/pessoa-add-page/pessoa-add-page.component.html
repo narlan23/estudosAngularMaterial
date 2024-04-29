@@ -1,20 +1,20 @@
-<form (ngSubmit)="salvar()">
+<form (formGrup)= "formGroup" (ngSubmit)="salvar()">
   <div>
     <mat-form-field>
       <mat-label>Nome</mat-label>
-      <input matInput type="text" placeholder="Nome" name ="nome" [(ngModel)]="pessoa.nome" required/>
+      <input matInput type="text" placeholder="Nome" name ="nome" formControlName="nome" required/>
     </mat-form-field>
   </div>
   <div>
     <mat-form-field>
       <mat-label>Email</mat-label>
-      <input matInput type="text" placeholder="Email" name ="email" [(ngModel)]="pessoa.email"/>
+      <input matInput type="text" placeholder="Email" name ="email" formControlName="email"/>
     </mat-form-field>
   </div>
   <div>
     <mat-form-field>
       <mat-label>Hoble</mat-label>
-      <mat-select [(ngModel)]="pessoa.hoble" name ="hoble">
+      <mat-select formControlName="hoble" name ="hoble">
         <mat-option *ngFor="let hoble of hobles" [value]="hoble">{{hoble}}</mat-option>
       </mat-select>
     </mat-form-field>
