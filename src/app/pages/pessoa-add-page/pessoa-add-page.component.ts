@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-pessoa-add-page',
@@ -7,10 +7,6 @@ import { FormBuilder } from '@angular/forms';
   styleUrl: './pessoa-add-page.component.css'
 })
 export class PessoaAddPageComponent {
-
-  pessoa: any = {
-
-  }
 
   hobles = [
     "Dançar",
@@ -20,8 +16,8 @@ export class PessoaAddPageComponent {
   ]
 
   formGroup = this.formBuilder.group({
-    nome : [''],
-    email : [''],
+    nome : ['',Validators.required],
+    email : ['',Validators.compose([Validators.email,Validators.required])],
     hoble : ['']
   })
 
@@ -34,6 +30,9 @@ export class PessoaAddPageComponent {
     }else{
       alert("formulario invalido!!")
     }
+  }
+  isError(control: 'email'| 'nome' | 'hoble',validor:string){
+    return this.formGroup.controls[control].getError(validor) ? true:false
   }
 
 }
