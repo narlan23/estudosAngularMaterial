@@ -6,7 +6,7 @@ import { PessoaAddPageComponent } from './pages/pessoa-add-page/pessoa-add-page.
 const routes: Routes = [
   {path: 'pessoas',component:PessoaComponent},
   {path: 'pessoas/cadastro',component:PessoaAddPageComponent},
-  {path: 'cadastro/pessoa/:id',component:PessoaAddPageComponent}
+  {path: 'pessoas/cadastro/:id',component:PessoaAddPageComponent}
 ];
 
 @NgModule({

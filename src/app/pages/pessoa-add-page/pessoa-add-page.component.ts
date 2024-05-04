@@ -19,16 +19,16 @@ export class PessoaAddPageComponent implements OnInit{
   ]
 
   formGroup = this.formBuilder.group({
-    id : this.formBuilder.control(<number|null>null),
+    id : this.formBuilder.control<number|null>(null),
     nome : ['',Validators.required],
     email : ['',Validators.compose([Validators.email,Validators.required])],
     hoble : ['']
   })
 
-  constructor(private formBuilder:FormBuilder, private service: PessoaService, private actoveRouter: ActivatedRoute){}
+  constructor(private formBuilder:FormBuilder, private service: PessoaService, private activeRouter: ActivatedRoute){}
 
   ngOnInit(): void {
-      const id = this.actoveRouter.snapshot.paramMap.get('id')
+      const id = this.activeRouter.snapshot.paramMap.get('id')
       if(id){
         this.formGroup.patchValue(this.service.buscar(id))
       }
@@ -36,14 +36,16 @@ export class PessoaAddPageComponent implements OnInit{
 
   salvar(){
     if(this.formGroup.valid){
-    if(this.formGroup.value.id){
-      this.service.editar(this.formToValue(this.formGroup))
-    }else{
-      this.service.salvar(this.formToValue(this.formGroup))
-    .subscribe(p => {
-      alert("pessoa salva com sucesso!")
+      if(this.formGroup.value.id){
+        this.service.editar(this.formToValue(this.formGroup))
+        console.log("editou!")
+      }else{
+        this.service.salvar(this.formToValue(this.formGroup))
+        .subscribe(p => {
+        alert("pessoa salva com sucesso!")
+        console.log("salvou")
     })
-    }
+      }
     }
     else{
       alert("formulario invalido!!")

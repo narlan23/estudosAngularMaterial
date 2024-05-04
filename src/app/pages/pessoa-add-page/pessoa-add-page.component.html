@@ -1,4 +1,5 @@
 <form [formGroup]="formGroup" (ngSubmit)="salvar()">
+  <input type="hidden" formControlName="id"/>
   <div>
     <mat-form-field>
       <mat-label>Nome</mat-label>
